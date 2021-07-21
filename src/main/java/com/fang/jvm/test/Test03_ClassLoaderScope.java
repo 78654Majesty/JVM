@@ -6,7 +6,7 @@ package com.fang.jvm.test;
  * @description classLoader范围
  * @date 2021/7/13 12:40 上午
  **/
-public class Test02_ClassLoaderScope {
+public class Test03_ClassLoaderScope {
     /**
      * Launcher 启动器定义classLoader的范围
      */
