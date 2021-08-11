@@ -3,6 +3,7 @@ package com.fang.jvm.test;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.InputStream;
 
 /**
  * @author fanglingxiao
@@ -12,8 +13,15 @@ import java.io.FileInputStream;
  **/
 public class Test05_MyClassLoader extends ClassLoader {
 
+
+    /**
+     * 重写findClass 自定义加载器
+     *
+     * @author fanglingxiao
+     * @createDateTime 2021/8/11 11:09 下午
+     */
     @Override
-    public Class<?> loadClass(String name) throws ClassNotFoundException {
+    protected Class<?> findClass(String name) throws ClassNotFoundException {
         File file = new File("/Users/james/Documents/workspace/JavaStudySpace/jvm", name.replaceAll("\\.", "/").concat(".class"));
         FileInputStream fis = null;
         try {
@@ -30,7 +38,7 @@ public class Test05_MyClassLoader extends ClassLoader {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return super.loadClass(name);
+        return super.findClass(name);
     }
 
     public static void main(String[] args) throws Exception {
