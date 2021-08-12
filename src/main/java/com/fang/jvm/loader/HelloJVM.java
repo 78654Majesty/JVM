@@ -1,4 +1,4 @@
-package com.fang.jvm.test;
+package com.fang.jvm.loader;
 
 /**
  * @author fanglingxiao

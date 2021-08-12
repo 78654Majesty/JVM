@@ -1,4 +1,4 @@
-package com.fang.jvm.test;
+package com.fang.jvm.loader;
 
 /**
  * @author fanglingxiao
@@ -9,7 +9,7 @@ package com.fang.jvm.test;
 public class Test04_LoadClass {
 
     public static void main(String[] args) throws ClassNotFoundException {
-        Class clazz = Test04_LoadClass.class.getClassLoader().loadClass("com.fang.jvm.test.Test03_ClassLoaderScope");
+        Class clazz = Test04_LoadClass.class.getClassLoader().loadClass("com.fang.jvm.loader.Test03_ClassLoaderScope");
         System.out.println(clazz.getName());
     }
 }

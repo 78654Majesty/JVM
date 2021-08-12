@@ -1,9 +1,8 @@
-package com.fang.jvm.test;
+package com.fang.jvm.loader;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
 
 /**
  * @author fanglingxiao
@@ -43,8 +42,8 @@ public class Test05_MyClassLoader extends ClassLoader {
 
     public static void main(String[] args) throws Exception {
         ClassLoader loader = new Test05_MyClassLoader();
-        Class clazz = loader.loadClass("com.fang.jvm.test.HelloJVM");
-        Class clazz2 = loader.loadClass("com.fang.jvm.test.HelloJVM");
+        Class clazz = loader.loadClass("com.fang.jvm.loader.HelloJVM");
+        Class clazz2 = loader.loadClass("com.fang.jvm.loader.HelloJVM");
         System.out.println(clazz == clazz2);
         HelloJVM hello = (HelloJVM) clazz.newInstance();
         hello.hello();

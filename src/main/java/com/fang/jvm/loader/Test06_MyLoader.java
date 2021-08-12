@@ -1,4 +1,4 @@
-package com.fang.jvm.test;
+package com.fang.jvm.loader;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,12 +33,12 @@ public class Test06_MyLoader extends ClassLoader {
 
     public static void main(String[] args) throws ClassNotFoundException {
         Test06_MyLoader loader = new Test06_MyLoader();
-        Class clazz1 = loader.loadClass("com.fang.jvm.test.HelloJVM");
-        Class clazz2 = loader.loadClass("com.fang.jvm.test.HelloJVM");
+        Class clazz1 = loader.loadClass("com.fang.jvm.loader.HelloJVM");
+        Class clazz2 = loader.loadClass("com.fang.jvm.loader.HelloJVM");
         System.out.println(clazz1 == clazz2);
         System.out.println("------------------");
         loader = new Test06_MyLoader();
-        Class clazz3 = loader.loadClass("com.fang.jvm.test.HelloJVM");
+        Class clazz3 = loader.loadClass("com.fang.jvm.loader.HelloJVM");
         // 如果true 则还是走的双亲委派，未找到该文件，所以还是走父类loadClass方法
         System.out.println(clazz2 == clazz3);
     }

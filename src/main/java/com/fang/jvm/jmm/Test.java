@@ -1,4 +1,4 @@
-package com.fang.jvm.test1;
+package com.fang.jvm.jmm;
 
 public class Test{
     public static void main(String[] args){
